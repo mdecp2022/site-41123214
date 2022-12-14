@@ -623,11 +623,199 @@
 </table>
 <p><a href="https://gist.github.com/41123214/b04265787001e810027e06ae79249500">git</a></p><h2>w13</h2>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022.html?src=https://gist.githubusercontent.com/41123214/081df7bd65a27ca2ef044d7c6bc3a03e/raw/185df1d9660eed9481bc2fb5ff36bfc0e3226144/gistfile1.txt">溫度轉換1</a></p>
+<p>'''<br/>f = c*9/5 + 32<br/>c = (f-32)*5/9<br/>'''<br/>c = input("請輸入攝氏溫度值")<br/>c = float(c)<br/>#print(c, type(c))<br/>f = c*9/5 + 32<br/>print(c, f)</p>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/index.html?src=https://gist.githubusercontent.com/41123214/8adcaf02ab62b9d455aa51a36a368f06/raw/373ce69ce8902fe8faba1ddc9eabae88eba3b2b4/%25E6%25BA%25AB%25E5%25BA%25A6%25E8%25BD%2589%25E6%258F%259B2">溫度轉換2</a></p>
-<h2>w14</h2>
+<p>'''<br/>f-c*9/5+32<br/>c=(f-32)*5/9<br/>'''<br/>c = input("請輸入攝氏溫度值")<br/>print(type(c))<br/>c= float(c)<br/>print("你輸入的攝氏溫度:" + str(c),"等於華氏溫度:" + str(c*9/5 +32))</p>
+<p></p><h2>w14</h2>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022.html?src=https://gist.githubusercontent.com/41123214/ec7a88444454a781c9d4578b8f842be8/raw/ce9e8c3012d23a17465c31104ab50c1a262d2998/%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE">缺考名單</a></p>
-<p><a href="https://gist.github.com/41123214/ec7a88444454a781c9d4578b8f842be8">git</a></p>
-<h1>cp2022</h1>
+<table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-hpc="" data-paste-markdown-skip="" data-tab-size="8" data-tagsearch-lang="" data-tagsearch-path="缺考名單">
+<tbody>
+<tr>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC1">import ast</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2" id="file--L2"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC2"># get stud_list first</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3" id="file--L3"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC3">def get_stud(c_name):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4" id="file--L4"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC4">courses = {"1a": "0747", "1b": "0761", "2a": "0773", "2b": "0786"}</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5" id="file--L5"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC5">#c_name = "1b"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6" id="file--L6"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC6">c = courses[c_name]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7" id="file--L7"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC7">url = "https://nfu.cycu.org/?semester=1111&amp;courseno=" + c + "&amp;column=True"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8" id="file--L8"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC8">data = open(url).read().split("\n")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9" id="file--L9"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC9">stud = data[:-1]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10" id="file--L10"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC10">return stud</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11" id="file--L11"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC11"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12" id="file--L12"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC12">cp_stud = get_stud("1b")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13" id="file--L13"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC13"># get w10 quiz result</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14" id="file--L14"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC14">cp_w11_quiz_url = "https://gist.githubusercontent.com/mdecycu/9df4b372ac1b7386cf259ced15f1a2b2/raw/a0be253dc36fb3d0d2e1878950dae0b13d07a8f6/2022_1208_cp_w14_1b_quiz.json"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15" id="file--L15"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC15">cp_w10_quiz_url = "https://gist.githubusercontent.com/mdecycu/9df4b372ac1b7386cf259ced15f1a2b2/raw/a6825f13b1bb0b61e09e74dd117729eefe1d947f/20221110_cp1b_w10_quiz.json"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16" id="file--L16"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC16">def get_score(url):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17" id="file--L17"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC17">num_stud = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18" id="file--L18"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC18">total_score = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19" id="file--L19"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC19">json_data = open(url).read()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20" id="file--L20"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC20">big_dict = ast.literal_eval(json_data)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21" id="file--L21"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC21">data = big_dict["body"]["testuser"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22" id="file--L22"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC22">quiz_dict = {}</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23" id="file--L23"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC23">for i in data:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24" id="file--L24"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC24">stud_id = data[i]["user_name"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25" id="file--L25"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC25">stud_score = int(float(data[i]["total_score"]))</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26" id="file--L26"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC26">quiz_dict[stud_id] = stud_score</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27" id="file--L27"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC27">num_stud = num_stud + 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28" id="file--L28"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC28">total_score = total_score + stud_score</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29" id="file--L29"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC29">return quiz_dict, num_stud, total_score</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30" id="file--L30"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC30"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31" id="file--L31"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC31">#cp_quiz, num_stud, total_score = get_score(cp_w10_quiz_url)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32" id="file--L32"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC32">cp_quiz, num_stud, total_score = get_score(cp_w11_quiz_url)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33" id="file--L33"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC33">cp_abs = []</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34" id="file--L34"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC34">for stud in cp_stud:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35" id="file--L35"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC35">try:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36" id="file--L36"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC36">print(stud, cp_quiz[stud])</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37" id="file--L37"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC37">except:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38" id="file--L38"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC38"># 缺考者沒有 quiz 成績</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39" id="file--L39"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC39">print(stud, "缺")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40" id="file--L40"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC40">cp_abs.append(stud)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41" id="file--L41"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC41">print("\n考試平均分數為:", int(total_score/num_stud))</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42" id="file--L42"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC42"># 列出缺考名單</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43" id="file--L43"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC43">print("="*20)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44" id="file--L44"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC44">print("以下為 w14 缺考名單:")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45" id="file--L45"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC45">for stud in cp_abs:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46" id="file--L46"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC46">print(stud)</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://gist.github.com/41123214/ec7a88444454a781c9d4578b8f842be8">git</a></p><h1>cp2022</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
