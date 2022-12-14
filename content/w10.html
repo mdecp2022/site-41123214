@@ -143,6 +143,281 @@ img.add_border {
         </header>
     <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='w13.html'>Next</a> >> w13<br /><h1>w10</h1>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022?src=https://gist.githubusercontent.com/41123214/b04265787001e810027e06ae79249500/raw/567a580fd1732c6768442db5d08d88da551d51ef/%25E7%25B9%25AA%25E5%259C%2596">繪圖</a></p>
+<table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-hpc="" data-paste-markdown-skip="" data-tab-size="8" data-tagsearch-lang="" data-tagsearch-path="繪圖">
+<tbody>
+<tr>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC1"># 這個程式用於 demo 以 canvas 畫線以及寫字</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2" id="file--L2"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC2"># 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3" id="file--L3"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC3">from browser import document as doc</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4" id="file--L4"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC4"># 從 browser 模組導入 html 類別, 主要用於建立 CANVAS 標註物件, 並插入頁面中</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5" id="file--L5"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC5">from browser import html</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6" id="file--L6"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC6"># 利用 html 建立一個 CANVAS 標註物件, 與變數 canvas 對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7" id="file--L7"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC7">canvas = html.CANVAS(width = 600, height = 600)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8" id="file--L8"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC8"># 將 canvas 標註的 id 設為 "canvas"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9" id="file--L9"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC9">canvas.id = "canvas"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10" id="file--L10"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC10"># 將 document 中 id 為 "brython_div1" 的標註</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11" id="file--L11"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC11"># 設為與 brython_div 變數對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12" id="file--L12"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC12">brython_div = doc["brython_div1"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13" id="file--L13"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC13"># 將 canvas 標註放入 brython_div 所在位置</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14" id="file--L14"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC14"># 頁面中原本就已經放入 &lt;div id="brython_div"&gt;&lt;/div&gt; 標註</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15" id="file--L15"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC15">brython_div &lt;= canvas</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16" id="file--L16"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC16"># 將頁面中 id 為 canvas 的 CANVAS 設為與 canvas 變數對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17" id="file--L17"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC17">canvas = doc["canvas"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18" id="file--L18"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC18"># 將 canvas 的 2d 繪圖 context 命名為 ctx</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19" id="file--L19"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC19">ctx = canvas.getContext("2d")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20" id="file--L20"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC20"># 建立一個 dRect() 函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21" id="file--L21"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC21"># s default 為 1, c defaul 為紅色</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22" id="file--L22"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC22">def dRect(lux, luy, w, h, s=1, c='#ff0000'):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23" id="file--L23"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC23">ctx.lineWidth = s</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24" id="file--L24"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC24">ctx.strokeStyle = c</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25" id="file--L25"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC25">ctx.beginPath();</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26" id="file--L26"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC26">ctx.rect(lux, luy, w, h)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27" id="file--L27"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC27">ctx.stroke();</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28" id="file--L28"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC28"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29" id="file--L29"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC29"># 建立畫直線函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30" id="file--L30"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC30">def draw_line(x1, y1, x2, y2, color="#ff0000"):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31" id="file--L31"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC31">ctx.beginPath()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32" id="file--L32"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC32">ctx.moveTo(x1, y1)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33" id="file--L33"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC33">ctx.lineTo(x2, y2)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34" id="file--L34"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC34">ctx.strokeStyle = color</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35" id="file--L35"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC35">ctx.stroke()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36" id="file--L36"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC36"># 建立 write Text 函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37" id="file--L37"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC37">def wText(x, y, t, s=14, c='#0000ff'):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38" id="file--L38"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC38">ctx.font = str(s) + "px Arial";</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39" id="file--L39"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC39">ctx.fillText(t, x, y)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40" id="file--L40"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC40"># 定義畫格線的函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41" id="file--L41"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC41">def grid(startx, starty, w, h, wnum, hnum, pixel=1, color="#ff0000"):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42" id="file--L42"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC42"># 利用迴圈與座標增量繪圖</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43" id="file--L43"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC43"># 因為輸入 wnum 與 hnum 為格子數, 畫格線數則需加上 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44" id="file--L44"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC44">for i in range(wnum+1):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45" id="file--L45"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC45">for j in range(hnum+1):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46" id="file--L46"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC46"># 畫上下直線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47" id="file--L47"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC47">yend = starty + h*(hnum)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48" id="file--L48"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC48">xend = startx + w*(wnum)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49" id="file--L49"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC49">x = startx + i*w</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50" id="file--L50"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC50">draw_line(x, starty, x, yend, color)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51" id="file--L51"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC51"># 畫左右直線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52" id="file--L52"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC52">y = starty + j*h</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="53" id="file--L53"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC53">draw_line(startx, y, xend, y, color)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="54" id="file--L54"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC54">#wText(w/2-10, y-w/2, str(j))</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="55" id="file--L55"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC55"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="56" id="file--L56"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC56"># 設定格數</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="57" id="file--L57"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC57">num = 15</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="58" id="file--L58"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC58"># 設定線寬</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="59" id="file--L59"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC59">pixel = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="60" id="file--L60"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC60"># 設定 w 寬度</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="61" id="file--L61"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC61">w = int(canvas.width/num) - pixel</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="62" id="file--L62"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC62"># 設定 h 高度</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="63" id="file--L63"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC63">h = int(canvas.height/num) - pixel</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="64" id="file--L64"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC64"># 設定繪圖座標點起點位置</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="65" id="file--L65"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC65">x = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="66" id="file--L66"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC66">y = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="67" id="file--L67"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC67"># 利用 grid 函式畫出格線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="68" id="file--L68"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC68">grid(x, y, w, h, num, num, pixel=1, color="black")</td>
+</tr>
+</tbody>
+</table>
 <p><a href="https://gist.github.com/41123214/b04265787001e810027e06ae79249500">git</a></p><br />W6 << <a href='W6.html'>Previous</a> <a href='w13.html'>Next</a> >> w13</div>
         
     <!-- footer -->

@@ -2,20 +2,632 @@
 <p>cmsite: wcms use <a href="https://github.com/mdecycu/cmsimde">https://github.com/mdecycu/cmsimde</a> as submodule</p>
 <h1>作業心得</h1>
 <p>我自己在做作業的時候,都會去看老師上課錄的教學影片,但有時候明明都照著影片做,卻還是做不出來,我自己也不擅長做程式類的東西,上課時我都聽不懂甚至也不知道老師在做哪個步驟,但幸好老師有在從教一次,讓我大概知道要做什麼,雖然大部分的情況都需要找同學幫忙,但至少我現在懂得如何維護網站了</p>
-<p>(ps:老師不要當我,我盡力了)</p><h1>HW</h1>
+<p>(ps:老師不要當我,我盡力了)</p>
+<h1>HW</h1>
 <p></p>
 <h2>W5</h2>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022.html?src=https://gist.githubusercontent.com/41123214/a5d523c330601f2ae1715d2c9f3037b0/raw/496a094de699b111f0a2d5841ba6d8d386f532c6/%25E4%25BA%2582%25E6%2595%25B8.Py">亂數</a></p>
-<p><a href="https://gist.github.com/41123214/a5d523c330601f2ae1715d2c9f3037b0">git</a></p><h2>W6</h2>
-<p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022.html?src=https://gist.githubusercontent.com/41123214/270d0b6a5bf9b0f818aa8859e86fabaa/raw/8b5fe78879580e8d2f0ddc030fbda074c3bf7f70/radom_draw_1b.py&amp;src2=https://gist.githubusercontent.com/41123214/270d0b6a5bf9b0f818aa8859e86fabaa/raw/8b5fe78879580e8d2f0ddc030fbda074c3bf7f70/list_1b_static_site.py">抽點</a></p>
+<table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-hpc="" data-paste-markdown-skip="" data-tab-size="8" data-tagsearch-lang="Python" data-tagsearch-path="亂數.Py">
+<tbody>
+<tr>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC1"><span class="pl-c"># 導入亂數模組</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2" id="file-py-L2"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC2"><span class="pl-k">import</span> <span class="pl-s1">random</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3" id="file-py-L3"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC3"><span class="pl-c"># 導入字串模組</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4" id="file-py-L4"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC4"><span class="pl-k">import</span> <span class="pl-s1">string</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5" id="file-py-L5"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC5"><span class="pl-c"># 利用 def 關鍵字定義函式</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6" id="file-py-L6"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC6"><span class="pl-c"># 函式的輸入變數可以設定初始值</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7" id="file-py-L7"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC7"><span class="pl-k">def</span> <span class="pl-en">password_generator</span>(<span class="pl-s1">size</span><span class="pl-c1">=</span><span class="pl-c1">4</span>, <span class="pl-s1">chars</span><span class="pl-c1">=</span><span class="pl-s1">string</span>.<span class="pl-s1">ascii_lowercase</span> <span class="pl-c1">+</span> <span class="pl-s1">string</span>.<span class="pl-s1">digits</span>):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8" id="file-py-L8"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC8"><span class="pl-c"># 函式內以多行註解說明函式功能</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9" id="file-py-L9"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC9"><span class="pl-s">"""Generate random password</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10" id="file-py-L10"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC10"><span class="pl-s"> """</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11" id="file-py-L11"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC11"><span class="pl-c"># 利用 return 關鍵字將所產生的亂數字串傳回</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12" id="file-py-L12"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC12"><span class="pl-k">return</span> <span class="pl-s">''</span>.<span class="pl-en">join</span>(<span class="pl-s1">random</span>.<span class="pl-en">choice</span>(<span class="pl-s1">chars</span>) <span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">size</span>))</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13" id="file-py-L13"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC13"><span class="pl-c"># 建立一個變數與隨後的字串對應</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14" id="file-py-L14"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC14"><span class="pl-s1">pass_string</span> <span class="pl-c1">=</span> <span class="pl-s">"abcdefghkmnpqrstuwxyz123456789"</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15" id="file-py-L15"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC15"><span class="pl-s1">cp_num</span> <span class="pl-c1">=</span> [<span class="pl-s">"0747"</span>, <span class="pl-s">"0761"</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16" id="file-py-L16"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC16"><span class="pl-s1">cad_num</span> <span class="pl-c1">=</span> [<span class="pl-s">"0773"</span>, <span class="pl-s">"0786"</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17" id="file-py-L17"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC17"><span class="pl-k">def</span> <span class="pl-en">gen_acc_pass</span>(<span class="pl-s1">course</span>, <span class="pl-s1">course_num</span>):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18" id="file-py-L18"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC18"><span class="pl-s1">stud_list</span> <span class="pl-c1">=</span>[]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19" id="file-py-L19"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC19"><span class="pl-k">for</span> <span class="pl-s1">num</span> <span class="pl-c1">in</span> <span class="pl-s1">course_num</span>:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20" id="file-py-L20"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC20"><span class="pl-s1">url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://nfu.cycu.org/?semester=1111&amp;courseno="</span> <span class="pl-c1">+</span> <span class="pl-s1">num</span> <span class="pl-c1">+</span> <span class="pl-s">"&amp;column=True"</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21" id="file-py-L21"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC21"><span class="pl-s1">class_list</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s1">url</span>).<span class="pl-en">read</span>().<span class="pl-en">split</span>(<span class="pl-s">"<span class="pl-cce">\n</span>"</span>)[:<span class="pl-c1">-</span><span class="pl-c1">1</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22" id="file-py-L22"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC22"><span class="pl-s1">stud_list</span> <span class="pl-c1">+=</span> <span class="pl-s1">class_list</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23" id="file-py-L23"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC23"><span class="pl-c">#print(stud_list)</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24" id="file-py-L24"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC24"><span class="pl-k">for</span> <span class="pl-s1">stud_num</span> <span class="pl-c1">in</span> <span class="pl-s1">stud_list</span>:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25" id="file-py-L25"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC25"><span class="pl-s1">password</span> <span class="pl-c1">=</span> <span class="pl-en">password_generator</span>(<span class="pl-c1">4</span>, <span class="pl-s1">pass_string</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26" id="file-py-L26"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC26"><span class="pl-c">#print(password)</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27" id="file-py-L27"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC27"><span class="pl-s1">account</span> <span class="pl-c1">=</span> <span class="pl-s1">course</span> <span class="pl-c1">+</span> <span class="pl-s1">stud_num</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28" id="file-py-L28"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC28"><span class="pl-c">#print(account)</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29" id="file-py-L29"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC29"><span class="pl-en">print</span>(<span class="pl-s1">stud_num</span> <span class="pl-c1">+</span> <span class="pl-s">"<span class="pl-cce">\t</span>"</span> <span class="pl-c1">+</span> <span class="pl-s1">account</span> <span class="pl-c1">+</span> <span class="pl-s">"<span class="pl-cce">\t</span>"</span> <span class="pl-c1">+</span> <span class="pl-s1">password</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30" id="file-py-L30"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC30"><span class="pl-en">gen_acc_pass</span>(<span class="pl-s">"cp"</span>, <span class="pl-s1">cp_num</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31" id="file-py-L31"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-py-LC31"><span class="pl-en">gen_acc_pass</span>(<span class="pl-s">"cad"</span>, <span class="pl-s1">cad_num</span>)</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://gist.github.com/41123214/a5d523c330601f2ae1715d2c9f3037b0">git</a></p>
+<h2>W6</h2>
+<h4><a href="https://mdecp2022.github.io/site-41123214/content/cp2022.html?src=https://gist.githubusercontent.com/41123214/270d0b6a5bf9b0f818aa8859e86fabaa/raw/8b5fe78879580e8d2f0ddc030fbda074c3bf7f70/radom_draw_1b.py&amp;src2=https://gist.githubusercontent.com/41123214/270d0b6a5bf9b0f818aa8859e86fabaa/raw/8b5fe78879580e8d2f0ddc030fbda074c3bf7f70/list_1b_static_site.py">抽點</a></h4>
+<table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-hpc="" data-paste-markdown-skip="" data-tab-size="8" data-tagsearch-lang="Python" data-tagsearch-path="list_1b_static_site.py">
+<tbody>
+<tr>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC1"><span class="pl-k">from</span> <span class="pl-s1">browser</span> <span class="pl-k">import</span> <span class="pl-s1">document</span>, <span class="pl-s1">html</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2" id="file-list_1b_static_site-py-L2"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC2"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3" id="file-list_1b_static_site-py-L3"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC3"><span class="pl-s1">brython_div1</span> <span class="pl-c1">=</span> <span class="pl-s1">document</span>[<span class="pl-s">"brython_div2"</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4" id="file-list_1b_static_site-py-L4"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC4"><span class="pl-s">"""</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5" id="file-list_1b_static_site-py-L5"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC5"><span class="pl-s">brython_div1 &lt;= html.BUTTON("hello")</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6" id="file-list_1b_static_site-py-L6"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC6"><span class="pl-s">brython_div1 &lt;= html.BR()</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7" id="file-list_1b_static_site-py-L7"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC7"><span class="pl-s">brython_div1 &lt;= html.A("google", href="https://google.com")</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8" id="file-list_1b_static_site-py-L8"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC8"><span class="pl-s">"""</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9" id="file-list_1b_static_site-py-L9"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC9"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10" id="file-list_1b_static_site-py-L10"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC10"><span class="pl-s1">url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://mde.tw/studlist/2022fall/1b.txt"</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11" id="file-list_1b_static_site-py-L11"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC11"><span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s1">url</span>).<span class="pl-en">read</span>().<span class="pl-en">split</span>(<span class="pl-s">"<span class="pl-cce">\n</span>"</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12" id="file-list_1b_static_site-py-L12"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC12"><span class="pl-s1">mdecp2022</span> <span class="pl-c1">=</span> <span class="pl-s">"https://mdecp2022.github.io/site-"</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13" id="file-list_1b_static_site-py-L13"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC13"><span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span>[<span class="pl-c1">1</span>:<span class="pl-c1">-</span><span class="pl-c1">1</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14" id="file-list_1b_static_site-py-L14"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC14"><span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-s1">data</span>:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15" id="file-list_1b_static_site-py-L15"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC15"><span class="pl-s1">stud</span> <span class="pl-c1">=</span> <span class="pl-s1">i</span>.<span class="pl-en">split</span>(<span class="pl-s">"<span class="pl-cce">\t</span>"</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16" id="file-list_1b_static_site-py-L16"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC16"><span class="pl-s1">stud_num</span> <span class="pl-c1">=</span> <span class="pl-s1">stud</span>[<span class="pl-c1">0</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17" id="file-list_1b_static_site-py-L17"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC17"><span class="pl-s1">github_acc</span> <span class="pl-c1">=</span> <span class="pl-s1">stud</span>[<span class="pl-c1">1</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18" id="file-list_1b_static_site-py-L18"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC18"><span class="pl-c">#print(stud_num, github_acc)</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19" id="file-list_1b_static_site-py-L19"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC19"><span class="pl-k">if</span> <span class="pl-s1">github_acc</span> <span class="pl-c1">==</span> <span class="pl-s">""</span>:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20" id="file-list_1b_static_site-py-L20"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC20"><span class="pl-s1">github_acc</span> <span class="pl-c1">=</span> <span class="pl-s1">stud_num</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21" id="file-list_1b_static_site-py-L21"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC21"><span class="pl-s1">site</span> <span class="pl-c1">=</span> <span class="pl-s1">mdecp2022</span> <span class="pl-c1">+</span> <span class="pl-s1">github_acc</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22" id="file-list_1b_static_site-py-L22"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC22"><span class="pl-s1">link</span> <span class="pl-c1">=</span> <span class="pl-s1">html</span>.<span class="pl-v">A</span>(<span class="pl-s1">stud_num</span>, <span class="pl-s1">href</span><span class="pl-c1">=</span><span class="pl-s1">site</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23" id="file-list_1b_static_site-py-L23"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC23"><span class="pl-s1">brython_div1</span> <span class="pl-c1">&lt;=</span> <span class="pl-s1">link</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24" id="file-list_1b_static_site-py-L24"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-list_1b_static_site-py-LC24"><span class="pl-s1">brython_div1</span> <span class="pl-c1">&lt;=</span> <span class="pl-s1">html</span>.<span class="pl-v">BR</span>()</td>
+</tr>
+</tbody>
+</table>
+<table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-hpc="" data-paste-markdown-skip="" data-tab-size="8" data-tagsearch-lang="Python" data-tagsearch-path="radom_draw_1b.py">
+<tbody>
+<tr>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC1"><span class="pl-c"># Python 的註解分為單行註解與多行, 單行註解可在字串前方放入 #</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2" id="file-radom_draw_1b-py-L2"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC2"><span class="pl-s">'''多行註解則可以透過三個單引號前後標註字串或文字段落內容, </span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3" id="file-radom_draw_1b-py-L3"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC3"><span class="pl-s">也可以使用三個雙引號作為多行註解的標註</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4" id="file-radom_draw_1b-py-L4"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC4"><span class="pl-s">'''</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5" id="file-radom_draw_1b-py-L5"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC5"><span class="pl-c"># 使用 import 導入 random 模組, 隨後就可以直接引用 random 模組的方法</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6" id="file-radom_draw_1b-py-L6"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC6"><span class="pl-k">import</span> <span class="pl-s1">random</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7" id="file-radom_draw_1b-py-L7"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC7"><span class="pl-s1">cp1b</span> <span class="pl-c1">=</span> <span class="pl-s">"0761"</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8" id="file-radom_draw_1b-py-L8"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC8"><span class="pl-c"># 宣告 url 變數值為字串, 此字串為取得 cp2022 1a 選課成員名單</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9" id="file-radom_draw_1b-py-L9"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC9"><span class="pl-s1">url</span> <span class="pl-c1">=</span> <span class="pl-s">"https://nfu.cycu.org/?semester=1111&amp;courseno="</span> <span class="pl-c1">+</span> <span class="pl-s1">cp1b</span> <span class="pl-c1">+</span> <span class="pl-s">"&amp;column=True"</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10" id="file-radom_draw_1b-py-L10"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC10"><span class="pl-c"># 利用上述已經宣告的 url 變數字串值, 作為 open() 函式的輸入變數, 可以連結至該網站</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11" id="file-radom_draw_1b-py-L11"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC11"><span class="pl-c"># 連接 url 所代表字串的網站後, 再利用 read() 函式讀取該網站的內容, 即可取得 cp2022 1a 的選課成員學號</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12" id="file-radom_draw_1b-py-L12"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC12"><span class="pl-c"># url 所屬的網站, 乃 69 中的一台虛擬主機 8/10ff-0-1-2, 並利用 Get 從教務主機取回課程註冊成員學號</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13" id="file-radom_draw_1b-py-L13"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC13"><span class="pl-c"># 由於所取回的學號以跳行符號隔開, 因此取回的學號資料行, 再利用 split() 函式, 以 \n 跳行符號分割後</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14" id="file-radom_draw_1b-py-L14"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC14"><span class="pl-c"># 所對應到 data 的資料型別將會是數列</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15" id="file-radom_draw_1b-py-L15"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC15"><span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s1">url</span>).<span class="pl-en">read</span>().<span class="pl-en">split</span>(<span class="pl-s">"<span class="pl-cce">\n</span>"</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16" id="file-radom_draw_1b-py-L16"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC16"><span class="pl-c"># 經過檢查 data 數列, 發現最後一個 element 為空字串, 因此利用 [:-1] 去掉數列的最後一個元素, -1 代表數列最後一個元素的索引</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17" id="file-radom_draw_1b-py-L17"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC17"><span class="pl-c">#print(data[:-1])</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18" id="file-radom_draw_1b-py-L18"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC18"><span class="pl-c"># 設定一個變數, 與修課成員學號數列對應</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19" id="file-radom_draw_1b-py-L19"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC19"><span class="pl-s1">stud</span> <span class="pl-c1">=</span> <span class="pl-s1">data</span>[:<span class="pl-c1">-</span><span class="pl-c1">1</span>]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20" id="file-radom_draw_1b-py-L20"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC20"><span class="pl-c"># 使用 random 模組中的 shuffle() 函式, 以隨機的方式排列 stud 數列內容</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21" id="file-radom_draw_1b-py-L21"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC21"><span class="pl-s1">random</span>.<span class="pl-en">shuffle</span>(<span class="pl-s1">stud</span>)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22" id="file-radom_draw_1b-py-L22"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC22"><span class="pl-c"># 設定 num 與 5 對應, 或將 5 整數值存入 num 變數所對應的記憶體位址</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23" id="file-radom_draw_1b-py-L23"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC23"><span class="pl-s1">num</span> <span class="pl-c1">=</span> <span class="pl-c1">5</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24" id="file-radom_draw_1b-py-L24"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC24"><span class="pl-c"># 利用 for 重複迴圈與 range() 變數, 列印出 (利用 print() 函式) 已經隨機排列次序的 stud 數列的最前面 num 個學號值</span></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25" id="file-radom_draw_1b-py-L25"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC25"><span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">num</span>):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26" id="file-radom_draw_1b-py-L26"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-radom_draw_1b-py-LC26"><span class="pl-en">print</span>(<span class="pl-s1">stud</span>[<span class="pl-s1">i</span>])</td>
+</tr>
+</tbody>
+</table>
+<h4><a href="https://gist.github.com/41123214/270d0b6a5bf9b0f818aa8859e86fabaa">git</a></h4>
 <h2>w10</h2>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022?src=https://gist.githubusercontent.com/41123214/b04265787001e810027e06ae79249500/raw/567a580fd1732c6768442db5d08d88da551d51ef/%25E7%25B9%25AA%25E5%259C%2596">繪圖</a></p>
+<table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-hpc="" data-paste-markdown-skip="" data-tab-size="8" data-tagsearch-lang="" data-tagsearch-path="繪圖">
+<tbody>
+<tr>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC1"># 這個程式用於 demo 以 canvas 畫線以及寫字</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2" id="file--L2"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC2"># 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3" id="file--L3"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC3">from browser import document as doc</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4" id="file--L4"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC4"># 從 browser 模組導入 html 類別, 主要用於建立 CANVAS 標註物件, 並插入頁面中</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5" id="file--L5"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC5">from browser import html</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6" id="file--L6"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC6"># 利用 html 建立一個 CANVAS 標註物件, 與變數 canvas 對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7" id="file--L7"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC7">canvas = html.CANVAS(width = 600, height = 600)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8" id="file--L8"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC8"># 將 canvas 標註的 id 設為 "canvas"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9" id="file--L9"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC9">canvas.id = "canvas"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10" id="file--L10"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC10"># 將 document 中 id 為 "brython_div1" 的標註</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11" id="file--L11"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC11"># 設為與 brython_div 變數對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12" id="file--L12"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC12">brython_div = doc["brython_div1"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13" id="file--L13"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC13"># 將 canvas 標註放入 brython_div 所在位置</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14" id="file--L14"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC14"># 頁面中原本就已經放入 &lt;div id="brython_div"&gt;&lt;/div&gt; 標註</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15" id="file--L15"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC15">brython_div &lt;= canvas</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16" id="file--L16"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC16"># 將頁面中 id 為 canvas 的 CANVAS 設為與 canvas 變數對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17" id="file--L17"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC17">canvas = doc["canvas"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18" id="file--L18"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC18"># 將 canvas 的 2d 繪圖 context 命名為 ctx</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19" id="file--L19"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC19">ctx = canvas.getContext("2d")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20" id="file--L20"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC20"># 建立一個 dRect() 函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21" id="file--L21"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC21"># s default 為 1, c defaul 為紅色</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22" id="file--L22"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC22">def dRect(lux, luy, w, h, s=1, c='#ff0000'):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23" id="file--L23"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC23">ctx.lineWidth = s</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24" id="file--L24"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC24">ctx.strokeStyle = c</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25" id="file--L25"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC25">ctx.beginPath();</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26" id="file--L26"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC26">ctx.rect(lux, luy, w, h)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27" id="file--L27"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC27">ctx.stroke();</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28" id="file--L28"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC28"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29" id="file--L29"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC29"># 建立畫直線函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30" id="file--L30"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC30">def draw_line(x1, y1, x2, y2, color="#ff0000"):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31" id="file--L31"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC31">ctx.beginPath()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32" id="file--L32"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC32">ctx.moveTo(x1, y1)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33" id="file--L33"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC33">ctx.lineTo(x2, y2)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34" id="file--L34"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC34">ctx.strokeStyle = color</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35" id="file--L35"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC35">ctx.stroke()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36" id="file--L36"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC36"># 建立 write Text 函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37" id="file--L37"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC37">def wText(x, y, t, s=14, c='#0000ff'):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38" id="file--L38"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC38">ctx.font = str(s) + "px Arial";</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39" id="file--L39"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC39">ctx.fillText(t, x, y)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40" id="file--L40"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC40"># 定義畫格線的函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41" id="file--L41"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC41">def grid(startx, starty, w, h, wnum, hnum, pixel=1, color="#ff0000"):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42" id="file--L42"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC42"># 利用迴圈與座標增量繪圖</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43" id="file--L43"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC43"># 因為輸入 wnum 與 hnum 為格子數, 畫格線數則需加上 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44" id="file--L44"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC44">for i in range(wnum+1):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45" id="file--L45"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC45">for j in range(hnum+1):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46" id="file--L46"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC46"># 畫上下直線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47" id="file--L47"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC47">yend = starty + h*(hnum)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48" id="file--L48"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC48">xend = startx + w*(wnum)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49" id="file--L49"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC49">x = startx + i*w</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50" id="file--L50"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC50">draw_line(x, starty, x, yend, color)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51" id="file--L51"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC51"># 畫左右直線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52" id="file--L52"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC52">y = starty + j*h</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="53" id="file--L53"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC53">draw_line(startx, y, xend, y, color)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="54" id="file--L54"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC54">#wText(w/2-10, y-w/2, str(j))</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="55" id="file--L55"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC55"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="56" id="file--L56"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC56"># 設定格數</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="57" id="file--L57"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC57">num = 15</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="58" id="file--L58"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC58"># 設定線寬</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="59" id="file--L59"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC59">pixel = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="60" id="file--L60"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC60"># 設定 w 寬度</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="61" id="file--L61"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC61">w = int(canvas.width/num) - pixel</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="62" id="file--L62"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC62"># 設定 h 高度</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="63" id="file--L63"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC63">h = int(canvas.height/num) - pixel</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="64" id="file--L64"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC64"># 設定繪圖座標點起點位置</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="65" id="file--L65"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC65">x = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="66" id="file--L66"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC66">y = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="67" id="file--L67"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC67"># 利用 grid 函式畫出格線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="68" id="file--L68"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file--LC68">grid(x, y, w, h, num, num, pixel=1, color="black")</td>
+</tr>
+</tbody>
+</table>
 <p><a href="https://gist.github.com/41123214/b04265787001e810027e06ae79249500">git</a></p><h2>w13</h2>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022.html?src=https://gist.githubusercontent.com/41123214/081df7bd65a27ca2ef044d7c6bc3a03e/raw/185df1d9660eed9481bc2fb5ff36bfc0e3226144/gistfile1.txt">溫度轉換1</a></p>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/index.html?src=https://gist.githubusercontent.com/41123214/8adcaf02ab62b9d455aa51a36a368f06/raw/373ce69ce8902fe8faba1ddc9eabae88eba3b2b4/%25E6%25BA%25AB%25E5%25BA%25A6%25E8%25BD%2589%25E6%258F%259B2">溫度轉換2</a></p>
 <h2>w14</h2>
 <p><a href="https://mdecp2022.github.io/site-41123214/content/cp2022.html?src=https://gist.githubusercontent.com/41123214/ec7a88444454a781c9d4578b8f842be8/raw/ce9e8c3012d23a17465c31104ab50c1a262d2998/%25E7%25BC%25BA%25E8%2580%2583%25E5%2590%258D%25E5%2596%25AE">缺考名單</a></p>
-<p><a href="https://gist.github.com/41123214/ec7a88444454a781c9d4578b8f842be8">git</a></p><h1>cp2022</h1>
+<p><a href="https://gist.github.com/41123214/ec7a88444454a781c9d4578b8f842be8">git</a></p>
+<h1>cp2022</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
