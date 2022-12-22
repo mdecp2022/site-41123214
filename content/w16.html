@@ -142,7 +142,761 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w15 << <a href='w15.html'>Previous</a> <a href='cp2022.html'>Next</a> >> cp2022<br /><h1>w16</h1>
-<p><a href="https://mdecp2022.github.io/site-41123214/content/Brython.html?src=https://gist.githubusercontent.com/41123214/a5ff2946a0a504845a281578f54075bc/raw/f53973f4cd8520185cc93e3ca03e496df56db0d5/%25E7%25B9%25AA%25E5%259C%25962">繪圖2</a></p><br />w15 << <a href='w15.html'>Previous</a> <a href='cp2022.html'>Next</a> >> cp2022</div>
+<p><a href="https://mdecp2022.github.io/site-41123214/content/Brython.html?src=https://gist.githubusercontent.com/41123214/a5ff2946a0a504845a281578f54075bc/raw/f53973f4cd8520185cc93e3ca03e496df56db0d5/%25E7%25B9%25AA%25E5%259C%25962">繪圖2</a></p>
+<p><a href="https://gist.github.com/41123214/a5ff2946a0a504845a281578f54075bc">git</a></p>
+<table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-hpc="" data-paste-markdown-skip="" data-tab-size="8" data-tagsearch-lang="" data-tagsearch-path="繪圖2">
+<tbody>
+<tr>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC1"># 這個程式用於 demo 綠色方塊沿著特定網格路徑行走</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="2" id="file-2-L2"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC2"># 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="3" id="file-2-L3"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC3">from browser import document as doc</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="4" id="file-2-L4"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC4"># 從 browser 模組導入 html 類別, 主要用於建立 CANVAS 標註物件, 並插入頁面中</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="5" id="file-2-L5"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC5">from browser import html</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="6" id="file-2-L6"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC6"># 用於定時執行特定函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="7" id="file-2-L7"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC7">import browser.timer</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="8" id="file-2-L8"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC8"># 導入亂數模組</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="9" id="file-2-L9"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC9">from random import random, randint</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="10" id="file-2-L10"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC10"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="11" id="file-2-L11"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC11"># 利用 html 建立一個 CANVAS 標註物件, 與變數 canvas 對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="12" id="file-2-L12"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC12">canvas = html.CANVAS(width = 600, height = 600)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="13" id="file-2-L13"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC13"># 將 canvas 標註的 id 設為 "canvas"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="14" id="file-2-L14"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC14">canvas.id = "canvas"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="15" id="file-2-L15"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC15"># 將 document 中 id 為 "brython_div" 的標註</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="16" id="file-2-L16"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC16"># 設為與 brython_div 變數對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="17" id="file-2-L17"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC17">brython_div = doc["brython_div1"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="18" id="file-2-L18"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC18"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="19" id="file-2-L19"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC19"># 建立 buttons</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="20" id="file-2-L20"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC20">brython_div &lt;= html.BUTTON("啟動", id="power")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="21" id="file-2-L21"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC21">brython_div &lt;= html.BR()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="22" id="file-2-L22"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC22"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="23" id="file-2-L23"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC23"># 將 canvas 標註放入 brython_div1 所在位置</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="24" id="file-2-L24"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC24"># 頁面中原本就已經放入 &lt;div id="brython_div"&gt;&lt;/div&gt; 標註</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="25" id="file-2-L25"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC25">brython_div &lt;= canvas</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="26" id="file-2-L26"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC26"># 將頁面中 id 為 canvas 的 CANVAS 設為與 canvas 變數對應</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="27" id="file-2-L27"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC27">canvas = doc["canvas"]</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="28" id="file-2-L28"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC28"># 將 canvas 的 2d 繪圖 context 命名為 ctx</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="29" id="file-2-L29"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC29">ctx = canvas.getContext("2d")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="30" id="file-2-L30"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC30"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="31" id="file-2-L31"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC31"># 建立一個 dRect() 函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="32" id="file-2-L32"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC32"># s default 為 1, c defaul 為紅色</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="33" id="file-2-L33"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC33">def dRect(lux, luy, w, h, s=1, c='#ff0000'):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="34" id="file-2-L34"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC34">ctx.lineWidth = s</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="35" id="file-2-L35"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC35">ctx.strokeStyle = c</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="36" id="file-2-L36"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC36">ctx.beginPath();</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="37" id="file-2-L37"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC37">ctx.rect(lux, luy, w, h)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="38" id="file-2-L38"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC38">ctx.stroke();</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="39" id="file-2-L39"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC39"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="40" id="file-2-L40"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC40"># 建立畫直線函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="41" id="file-2-L41"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC41">def draw_line(x1, y1, x2, y2, color="#ff0000"):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="42" id="file-2-L42"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC42">ctx.beginPath()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="43" id="file-2-L43"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC43">ctx.moveTo(x1, y1)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="44" id="file-2-L44"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC44">ctx.lineTo(x2, y2)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="45" id="file-2-L45"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC45">ctx.strokeStyle = color</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="46" id="file-2-L46"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC46">ctx.stroke()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="47" id="file-2-L47"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC47"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="48" id="file-2-L48"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC48"># 建立 write Text 函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="49" id="file-2-L49"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC49">def wText(x, y, t, s=14, c='#0000ff'):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="50" id="file-2-L50"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC50">ctx.font = str(s) + "px Arial";</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="51" id="file-2-L51"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC51">ctx.fillText(t, x, y)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="52" id="file-2-L52"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC52"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="53" id="file-2-L53"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC53"># 定義畫格線的函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="54" id="file-2-L54"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC54">def grid(startx, starty, w, h, wnum, hnum, pixel=1, color="#ff0000"):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="55" id="file-2-L55"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC55"># 利用迴圈與座標增量繪圖</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="56" id="file-2-L56"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC56"># 因為輸入 wnum 與 hnum 為格子數, 畫格線數則需加上 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="57" id="file-2-L57"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC57">for i in range(wnum+1):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="58" id="file-2-L58"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC58">for j in range(hnum+1):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="59" id="file-2-L59"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC59"># 畫上下直線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="60" id="file-2-L60"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC60">yend = starty + h*(hnum)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="61" id="file-2-L61"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC61">xend = startx + w*(wnum)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="62" id="file-2-L62"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC62">x = startx + i*w</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="63" id="file-2-L63"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC63">draw_line(x, starty, x, yend, color)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="64" id="file-2-L64"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC64"># 畫左右直線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="65" id="file-2-L65"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC65">y = starty + j*h</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="66" id="file-2-L66"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC66">draw_line(startx, y, xend, y, color)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="67" id="file-2-L67"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC67">#wText(w/2-10, y-w/2, str(j))</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="68" id="file-2-L68"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC68"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="69" id="file-2-L69"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC69"># 從兩個座標點求中心點座標</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="70" id="file-2-L70"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC70">def center(lx, ly, rx, ry):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="71" id="file-2-L71"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC71"># lx is x coord of the left up corner</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="72" id="file-2-L72"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC72"># rx is the x coord of th right down corner</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="73" id="file-2-L73"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC73">x = (lx + rx)/2</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="74" id="file-2-L74"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC74">y = (ly + ry)/2</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="75" id="file-2-L75"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC75">return x, y</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="76" id="file-2-L76"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC76"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="77" id="file-2-L77"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC77"># 畫出填色方塊</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="78" id="file-2-L78"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC78">def draw_rect(gx, gy, gw, gh, color="lime"):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="79" id="file-2-L79"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC79"># gx is the grid coord at x direction</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="80" id="file-2-L80"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC80"># gy is the grid coord at y direction</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="81" id="file-2-L81"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC81"># gw is the with of the green rect</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="82" id="file-2-L82"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC82"># gh is the height of the green rect</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="83" id="file-2-L83"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC83">lx = origx + (gx-1)*w</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="84" id="file-2-L84"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC84">ly = origy + (gy-1)*h</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="85" id="file-2-L85"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC85">rx = origx + gx*w</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="86" id="file-2-L86"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC86">ry = origy + gy*h</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="87" id="file-2-L87"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC87">cx, cy = center(lx, ly, rx, ry)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="88" id="file-2-L88"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC88"># glx is the x coord of the left corner</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="89" id="file-2-L89"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC89"># gly is the y coord of the left corner</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="90" id="file-2-L90"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC90">glx = cx - gw/2</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="91" id="file-2-L91"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC91">gly = cy - gh/2</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="92" id="file-2-L92"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC92"># 利用設定的顏色值畫出 rectangle</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="93" id="file-2-L93"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC93">ctx.fillStyle = color</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="94" id="file-2-L94"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC94">ctx.fillRect(glx, gly, gw, gh)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="95" id="file-2-L95"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC95"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="96" id="file-2-L96"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC96"># 以白色覆蓋位於 (nowx, nowy)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="97" id="file-2-L97"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC97"># 且比目標方塊長寬各大於 1 pixel的方塊</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="98" id="file-2-L98"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC98">def wipe():</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="99" id="file-2-L99"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC99">draw_rect(nowx, nowy, 30+1, 30+1, color="white")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="100" id="file-2-L100"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC100"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="101" id="file-2-L101"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC101"># 畫出位於 (nowx, nowy) 的綠色方塊</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="102" id="file-2-L102"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC102">def draw():</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="103" id="file-2-L103"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC103">draw_rect(nowx, nowy, 30, 30, color="lime")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="104" id="file-2-L104"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC104"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="105" id="file-2-L105"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC105"># 繞著外圍行走</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="106" id="file-2-L106"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC106">def walk():</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="107" id="file-2-L107"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC107">global stepx, stepy</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="108" id="file-2-L108"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC108"># 向右</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="109" id="file-2-L109"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC109">if nowx == 1 and nowy == 1:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="110" id="file-2-L110"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC110">stepx = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="111" id="file-2-L111"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC111">stepy = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="112" id="file-2-L112"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC112"># 向下</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="113" id="file-2-L113"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC113">elif nowx == 8 and nowy == 1:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="114" id="file-2-L114"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC114">stepx = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="115" id="file-2-L115"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC115">stepy = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="116" id="file-2-L116"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC116"># 向右</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="117" id="file-2-L117"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC117">elif nowx == 8 and nowy == 15:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="118" id="file-2-L118"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC118">stepx = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="119" id="file-2-L119"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC119">stepy = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="120" id="file-2-L120"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC120"># 向左</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="121" id="file-2-L121"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC121">elif nowx == 8 and nowy == 15:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="122" id="file-2-L122"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC122">stepx = -1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="123" id="file-2-L123"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC123">stepy = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="124" id="file-2-L124"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC124"># 向上</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="125" id="file-2-L125"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC125">elif nowx == 8 and nowy == -1:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="126" id="file-2-L126"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC126">stepx = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="127" id="file-2-L127"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC127">stepy = -1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="128" id="file-2-L128"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC128"># 每隔短暫時間即呼叫執行一次的函式</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="129" id="file-2-L129"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC129">def game():</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="130" id="file-2-L130"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC130"># 因 nowx 與 nowy 在函式外宣告</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="131" id="file-2-L131"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC131"># 且在函式內改變對應值, 因此需宣告為 global</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="132" id="file-2-L132"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC132">global nowx, nowy</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="133" id="file-2-L133"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC133">walk()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="134" id="file-2-L134"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC134">wipe()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="135" id="file-2-L135"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC135">nowx += stepx</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="136" id="file-2-L136"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC136">nowy += stepy</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="137" id="file-2-L137"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC137">draw()</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="138" id="file-2-L138"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC138"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="139" id="file-2-L139"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC139"># 將 anim 設為 None</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="140" id="file-2-L140"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC140">anim = None</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="141" id="file-2-L141"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC141"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="142" id="file-2-L142"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC142">def launchAnimation(ev):</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="143" id="file-2-L143"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC143">global anim</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="144" id="file-2-L144"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC144"># 初始啟動, anim 為 None</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="145" id="file-2-L145"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC145">if anim is None:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="146" id="file-2-L146"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC146"># 每 0.08 秒執行一次 draw 函式繪圖</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="147" id="file-2-L147"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC147">#anim = timer.set_interval(draw, 80)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="148" id="file-2-L148"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC148">anim = browser.timer.set_interval(game, 100)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="149" id="file-2-L149"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC149"># 初始啟動後, 按鈕文字轉為"暫停"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="150" id="file-2-L150"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC150">doc['power'].text = '暫停'</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="151" id="file-2-L151"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC151">elif anim == 'hold':</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="152" id="file-2-L152"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC152"># 當 anim 為 'hold' 表示曾經暫停後的啟動, 因此持續以 set_interval() 持續旋轉, 且將 power 文字轉為"暫停"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="153" id="file-2-L153"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC153">#anim = timer.set_interval(draw, 80)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="154" id="file-2-L154"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC154">anim = browser.timer.set_interval(game, 100)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="155" id="file-2-L155"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC155">doc['power'].text = '暫停'</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="156" id="file-2-L156"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC156">else:</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="157" id="file-2-L157"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC157"># 初始啟動後, 使用者再按 power, 此時 anim 非 None 也不是 'hold', 因此會執行 clear_interval() 暫停</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="158" id="file-2-L158"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC158"># 且將 anim 變數設為 'hold', 且 power 文字轉為"繼續"</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="159" id="file-2-L159"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC159">#timer.clear_interval(anim)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="160" id="file-2-L160"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC160">browser.timer.clear_interval(anim)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="161" id="file-2-L161"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC161">anim = 'hold'</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="162" id="file-2-L162"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC162">doc['power'].text = '繼續'</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="163" id="file-2-L163"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC163"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="164" id="file-2-L164"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC164"># 綠色方塊起點座標與 x 及 y 方向的座標增量</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="165" id="file-2-L165"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC165">nowx = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="166" id="file-2-L166"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC166">nowy = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="167" id="file-2-L167"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC167">stepx = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="168" id="file-2-L168"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC168">stepy = 0</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="169" id="file-2-L169"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC169"># 設定格數</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="170" id="file-2-L170"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC170"># width 方向格子數</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="171" id="file-2-L171"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC171">wnum = 15</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="172" id="file-2-L172"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC172"># height 方向格子數</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="173" id="file-2-L173"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC173">hnum = 15</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="174" id="file-2-L174"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC174"># 設定線寬</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="175" id="file-2-L175"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC175">pixel = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="176" id="file-2-L176"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC176"># 設定 w 寬度</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="177" id="file-2-L177"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC177">w = int(canvas.width/wnum) - pixel</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="178" id="file-2-L178"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC178"># 設定 h 高度</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="179" id="file-2-L179"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC179">h = int(canvas.height/hnum) - pixel</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="180" id="file-2-L180"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC180"># 設定繪圖座標點起點位置</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="181" id="file-2-L181"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC181">origx = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="182" id="file-2-L182"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC182">origy = 1</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="183" id="file-2-L183"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC183"># 利用 grid 函式畫出格線</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="184" id="file-2-L184"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC184">grid(origx, origy, w, h, wnum, hnum, pixel=1, color="black")</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="185" id="file-2-L185"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC185"></td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="186" id="file-2-L186"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC186">doc["power"].bind("click", launchAnimation)</td>
+</tr>
+<tr>
+<td class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="187" id="file-2-L187"></td>
+<td class="blob-code blob-code-inner js-file-line" id="file-2-LC187">
+<p>#browser.timer.set_interval(game, 100)</p>
+</td>
+</tr>
+</tbody>
+</table><br />w15 << <a href='w15.html'>Previous</a> <a href='cp2022.html'>Next</a> >> cp2022</div>
         
     <!-- footer -->
       <div class="container">
